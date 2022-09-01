@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<table border="1" style="border-collapse: collapse" >
+    <caption style="margin-bottom: 10px" ><B style="font-size: 13px ">BẢNG KIỂM TRA SỐ NGÀY CỦA THÁNG</B> </caption>
+    <tr>
+        <td><input id="nhap" placeholder="nhập tháng kiểm tra" value=""  >
+        </td>
+        <td><button id="check" onclick="check()" >Kiểm tra số ngày</button></td>
+    </tr>
+    <tr>
+        <td colspan="2" id="kq" style="height: 20px; text-align: center "  ></td>
+    </tr>
+</table>
+<script >
+    function check() {
+            a= +document.getElementById("nhap").value;
+        switch (a) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                document.getElementById("kq").innerText=" Là tháng có 31 ngày";break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                document.getElementById("kq").innerText=" Là tháng có 30 ngày";break;
+            case 2:
+                document.getElementById("kq").innerText="Là tháng có 28 ngày";break;
+            default:
+                document.getElementById("kq").innerText="Tháng bạn nhập không đúng";break;
+        }
+    }
+
+
+</script>
+</body>
+</html>
